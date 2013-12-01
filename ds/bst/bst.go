@@ -1,4 +1,4 @@
-package bintree
+package bst
 
 import ("fmt")
 
@@ -17,14 +17,14 @@ type node struct {
 }
 
 // Contains data about the binary tree
-type BinaryTree struct {
+type BinarySearchTree struct {
     head *node
     size int
 }
 
 // Initializes a new binary tree
-func NewBinaryTree() *BinaryTree {
-    tree := new(BinaryTree)
+func NewBinaryTree() *BinarySearchTree {
+    tree := new(BinarySearchTree)
     tree.head = new(node)
     return tree
 }
@@ -51,7 +51,7 @@ func add(head *node, item int) {
 }
 
 // Adds an integer into the tree
-func (tree *BinaryTree) Add(item int) {
+func (tree *BinarySearchTree) Add(item int) {
     if tree.size == 0 {
         n := new(node)
         n.data = item
@@ -64,7 +64,7 @@ func (tree *BinaryTree) Add(item int) {
 }
 
 // Returns the size of the tree
-func (tree BinaryTree) Size() int {
+func (tree BinarySearchTree) Size() int {
     return tree.size;
 }
 
@@ -89,7 +89,7 @@ func contains(head *node, item int) bool{
 }
 
 // Checks whether or not the tree cotains the given item
-func (tree BinaryTree) Contains(item int) bool {
+func (tree BinarySearchTree) Contains(item int) bool {
     return contains(tree.head, item)
 }
 
@@ -104,6 +104,6 @@ func printHelper(n *node) {
 }
 
 // Will print out the tree in pre-order 
-func (tree BinaryTree) Print() {
+func (tree BinarySearchTree) Print() {
    printHelper(tree.head) 
 }
