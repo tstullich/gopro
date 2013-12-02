@@ -126,7 +126,7 @@ func (tree BinarySearchTree) Traverse(order string) *list.List {
         case "in" :
             inorder(tree.head, traversal)
         case "post":
-	    postorder(tree.head, traversal)
+	        postorder(tree.head, traversal)
         case "pre":
             preorder(tree.head, traversal)   
     }
