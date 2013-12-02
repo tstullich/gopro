@@ -1,9 +1,9 @@
 package bst
 
-import ("fmt")
+import ("fmt"; "container/list")
 
 /*
- * Class to construc a binary search tree. 
+ * Class to construct a binary search tree. 
  * Does not have a remove method yet but it will
  * be added soon. Insertions and lookups should
  * be O(log n) if the tree is mostly balanced.
@@ -30,6 +30,8 @@ func NewBinaryTree() *BinarySearchTree {
 }
 
 // Nonexported method to iterate over tree
+// 
+// insert may be more appropriate than 'add'
 func add(head *node, item int) {
    if head.data > item {
        if head.left == nil {
@@ -93,17 +95,42 @@ func (tree BinarySearchTree) Contains(item int) bool {
     return contains(tree.head, item)
 }
 
-// Helper method to print out the tree
-func printHelper(n *node) {
-    if n == nil {
-        return
+// May be worth adding inorder, and post order
+func inorder(n *node, l *list.List) {
+    if n != nil {
+        inorder(n.left, l)
+        l.PushBack(n.data)
+        inorder(n.right, l)
     }
-    fmt.Printf("%v\n", n.data)
-    printHelper(n.left)
-    printHelper(n.right)
 }
 
-// Will print out the tree in pre-order 
-func (tree BinarySearchTree) Print() {
-   printHelper(tree.head) 
+func preorder(n *node, l *list.List) {
+    if n != nil {
+        l.PushBack(n.data)
+        preorder(n.left, l)
+        preorder(n.right, l)
+    }
 }
+
+func postorder(n *node, l *list.List) {
+    if n != nil {
+        postorder(n.left, l)
+        postorder(n.right, l)
+        l.PushBack(n.data)
+    }
+}
+
+func (tree BinarySearchTree) Traverse(order string) *list.List {
+    traversal := list.New()
+    switch order {
+        case "in" :
+            inorder(tree.head, traversal)
+        case "post":
+	    postorder(tree.head, traversal)
+        case "pre":
+            preorder(tree.head, traversal)   
+    }
+    return traversal
+}
+
+
