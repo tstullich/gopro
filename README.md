@@ -5,7 +5,7 @@ to make my future development a bit easier, as I won't have to start from scratc
 clone this repository and use my code as you wish, but it will be at your own risk. I won't take any responsibility
 if your code misbehaves.
 
-To Use
+Usage
 =====
 To include the data structures in your projects:
 * Simply clone this repository anywhere you like, then copy as many root folders as you need into your source 
