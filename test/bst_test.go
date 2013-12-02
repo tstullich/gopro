@@ -1,7 +1,6 @@
 package main
 
-import ("fmt" 
-        "ds/bst")
+import ("fmt";"ds/bst")
 
 func main() {
 	bst := bst.NewBinaryTree()
