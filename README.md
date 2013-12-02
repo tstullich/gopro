@@ -9,8 +9,8 @@ Usage
 =====
 To include the data structures in your projects:
 * Simply clone this repository anywhere you like, then copy as many root folders as you need into your source 
-folder (usually in your `src` folder in your Go workbench).
-* Then include the directory path in your .go files (i.e. "ds/queue").
+folder (usually in your `$GOPATH/src` folder in your Go workbench).
+* Then include the directory path in your `.go` files (i.e. `"ds/queue"`).
 
 To run the test files in the `/test` folder:
 * Change to the test folder that should be at the root.
