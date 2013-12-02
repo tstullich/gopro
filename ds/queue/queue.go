@@ -27,7 +27,6 @@ func (q *Queue) Push(item interface{}) {
 
 // Pops an item from the back of the queue
 func (q *Queue) Pop() interface{} {
-    fmt.Printf("Pop function\n")
     var ele = q.list.Remove(q.list.Front())
     return ele
 }
