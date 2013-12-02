@@ -1,6 +1,6 @@
 package bst
 
-import ("fmt"; "container/list")
+import ("container/list")
 
 /*
  * Class to construct a binary search tree. 

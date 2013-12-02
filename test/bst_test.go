@@ -1,7 +1,10 @@
-import ("fmt"; "bst")
+package main
+
+import ("fmt" 
+        "ds/bst")
 
 func main() {
-	bst := NewBinaryTree()
+	bst := bst.NewBinaryTree()
 	bst.Add(4)
 	bst.Add(5)
 	bst.Add(1)
@@ -29,5 +32,4 @@ func main() {
 	for e := trav.Front(); e != nil; e = e.Next() {
 		fmt.Println(e.Value.(int))
 	}
-
 }
