@@ -7,9 +7,16 @@ if your code misbehaves.
 
 To Use
 =====
+To include the data structures in your projects:
 * Simply clone this repository anywhere you like, then copy as many root folders as you need into your source 
-folder (usually in your __src__ folder in your Go workbench).
+folder (usually in your `src` folder in your Go workbench).
 * Then include the directory path in your .go files (i.e. "ds/queue").
+
+To run the test files in the `/test` folder:
+* Change to the test folder that should be at the root.
+* Build all tests with the `go test` command.
+* If you do not wish to have all the tests built at once use `go test <name of test file>`.
+* Run your test binary which should now appear in the same folder.  
 
 All data structures should be self-contained so there should not be any dependency issues if you only include 
 one or two files.
